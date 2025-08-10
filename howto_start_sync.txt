@@ -12,7 +12,38 @@ activating ng_shared_parallel_v.sln in ngspice_sync/ng_shared_parallel_v/.
 Compilation with CYGWIN is o.k. as well. You have to manually copy 
 usr/local/bin/cygngspice-0.dll to cygngspice-x.dll with x = 1, 2, 3.
 
-Compilation under LINUX still has to be tested.
+Compilation under LINUX has been successfully implemented and tested.
+
+Linux/macOS Compilation Instructions:
+=====================================
+
+1. Install dependencies:
+   - Ubuntu/Debian: sudo apt-get install ngspice libngspice0-dev
+   - CentOS/RHEL: sudo yum install ngspice ngspice-devel
+   - Fedora: sudo dnf install ngspice ngspice-devel
+   - macOS (MacPorts): sudo port install ngspice +lib+manual
+   - macOS (Homebrew): brew install ngspice
+
+2. Build the project:
+   make config    # Check configuration
+   make release   # Build optimized version
+   make debug     # Build debug version
+
+3. Prepare runtime libraries:
+   make prepare-libs
+
+4. Run the test:
+   ./ng_shared_parallel_test
+   # or
+   make test
+
+For automated setup on Linux, use:
+   ./setup_linux.sh
+
+For compilation testing:
+   ./test_compilation.sh
+
+See README_Linux_macOS.md for detailed instructions.
 
 Holger
 Jan. 24th, 2019

@@ -434,8 +434,8 @@ int main()
     ret = ((int * (*)(char*)) ngSpice_Command_handle2)("source D:\\Spice_general\\ngspice_sh\\examples\\shared-ngspice\\adder_mos.cir");
 #else
 //    ret = ((int * (*)(char*)) ngSpice_Command_handle)("../../examples/adder_mos.cir");
-    ret = ((int * (*)(char*)) ngSpice_Command_handle1)("source ../../examples/adder_mos.cir");
-    ret = ((int * (*)(char*)) ngSpice_Command_handle2)("source ../../examples/adder_mos.cir");
+    ret = ((int * (*)(char*)) ngSpice_Command_handle1)("source ./examples/adder_mos.cir");
+    ret = ((int * (*)(char*)) ngSpice_Command_handle2)("source ./examples/adder_mos.cir");
 #endif
     ret = ((int * (*)(char*)) ngSpice_Command_handle1)("bg_run");
     ret = ((int * (*)(char*)) ngSpice_Command_handle2)("bg_run");
@@ -693,9 +693,9 @@ next:
     testnumber = 2;
     printf("\n**  Test no. %d: Load three netlists, run synchronized **\n\n", testnumber);
 
-    ret = ((int * (*)(char*)) ngSpice_Command_handle1)("source ../../examples/inv_oc1.cir");
-    ret = ((int * (*)(char*)) ngSpice_Command_handle2)("source ../../examples/inv_oc2.cir");
-    ret = ((int * (*)(char*)) ngSpice_Command_handle3)("source ../../examples/inv_oc3.cir");
+    ret = ((int * (*)(char*)) ngSpice_Command_handle1)("source ./examples/inv_oc1.cir");
+    ret = ((int * (*)(char*)) ngSpice_Command_handle2)("source ./examples/inv_oc2.cir");
+    ret = ((int * (*)(char*)) ngSpice_Command_handle3)("source ./examples/inv_oc3.cir");
 
 
     ret = ((int * (*)(char*)) ngSpice_Command_handle1)("bg_run");
