@@ -1,0 +1,18 @@
+Move to ngspice_sync/ng_shared_parallel_v/bin and start
+ng_shared_parallel_v.exe. ngspice.dll has been compiled
+for 64 bit from branch pre-master and copied to 
+ngspice_sync/ng_shared_parallel_v/bin.
+ng_shared_parallel_v.exe has been copied after compilation
+from ngspice_sync\ng_shared_parallel_v\x64\Release to
+ngspice_sync/ng_shared_parallel_v/bin.
+
+Compilation (tested with MS Visual Studio 2019) is available by 
+activating ng_shared_parallel_v.sln in ngspice_sync/ng_shared_parallel_v/.
+
+Compilation with CYGWIN is o.k. as well. You have to manually copy 
+usr/local/bin/cygngspice-0.dll to cygngspice-x.dll with x = 1, 2, 3.
+
+Compilation under LINUX still has to be tested.
+
+Holger
+Jan. 24th, 2019
