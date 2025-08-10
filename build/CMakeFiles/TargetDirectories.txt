@@ -1,0 +1,11 @@
+/Users/w1t/code/ngspice_parallel/build/CMakeFiles/ng_shared_parallel_test.dir
+/Users/w1t/code/ngspice_parallel/build/CMakeFiles/prepare-libs.dir
+/Users/w1t/code/ngspice_parallel/build/CMakeFiles/run-test.dir
+/Users/w1t/code/ngspice_parallel/build/CMakeFiles/package.dir
+/Users/w1t/code/ngspice_parallel/build/CMakeFiles/package_source.dir
+/Users/w1t/code/ngspice_parallel/build/CMakeFiles/edit_cache.dir
+/Users/w1t/code/ngspice_parallel/build/CMakeFiles/rebuild_cache.dir
+/Users/w1t/code/ngspice_parallel/build/CMakeFiles/list_install_components.dir
+/Users/w1t/code/ngspice_parallel/build/CMakeFiles/install.dir
+/Users/w1t/code/ngspice_parallel/build/CMakeFiles/install/local.dir
+/Users/w1t/code/ngspice_parallel/build/CMakeFiles/install/strip.dir

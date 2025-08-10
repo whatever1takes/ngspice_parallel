@@ -1,0 +1,53 @@
+*****************==== CMOS Inverter chain, third partition ====*******************
+
+.include modelcard.nmos
+.include modelcard.pmos
+
+*.MODEL  N1  NMOS  LEVEL = 14  VERSION = 4.7
+*.MODEL  P1  PMOS  LEVEL = 14  VERSION = 4.7
+
+vdd 1 0 1.8
+vin in3 0 external
+vc1 c1 0 dc 1.8 pulse(1.8 0 145n 0.2n 0.2n 10n 200n)
+
+mp9 11 in3 1 1 p1 l=0.1u w=10u ad=5p pd=11u as=5p ps=11u 
+mn9 11 in3 0 0 n1 l=0.1u w=5u ad=2.5p pd=6u as=2.5p ps=6u
+mp10 12 11 1 1 p1 l=0.1u w=10u ad=5p pd=11u as=5p ps=11u 
+mn10 12 11 0 0 n1 l=0.1u w=5u ad=2.5p pd=6u as=2.5p ps=6u
+xnand 12 c1 1212 1 NAND
+mp11 13 1212 1 1 p1 l=0.1u w=10u ad=5p pd=11u as=5p ps=11u 
+mn11 13 1212 0 0 n1 l=0.1u w=5u ad=2.5p pd=6u as=2.5p ps=6u
+mp12 14 13 1 1 p1 l=0.1u w=10u ad=5p pd=11u as=5p ps=11u 
+mn12 14 13 0 0 n1 l=0.1u w=5u ad=2.5p pd=6u as=2.5p ps=6u
+mp13 15 14 1 1 p1 l=0.1u w=10u ad=5p pd=11u as=5p ps=11u 
+mn13 15 14 0 0 n1 l=0.1u w=5u ad=2.5p pd=6u as=2.5p ps=6u
+mp14 16 15 1 1 p1 l=0.1u w=10u ad=5p pd=11u as=5p ps=11u 
+mn14 16 15 0 0 n1 l=0.1u w=5u ad=2.5p pd=6u as=2.5p ps=6u
+mp15 17 16 1 1 p1 l=0.1u w=10u ad=5p pd=11u as=5p ps=11u 
+mn15 17 16 0 0 n1 l=0.1u w=5u ad=2.5p pd=6u as=2.5p ps=6u
+mp16 18 17 1 1 p1 l=0.1u w=10u ad=5p pd=11u as=5p ps=11u 
+mn16 18 17 0 0 n1 l=0.1u w=5u ad=2.5p pd=6u as=2.5p ps=6u
+mp17 out3  18 1 1 p1 l=0.1u w=10u ad=5p pd=11u as=5p ps=11u 
+mn17 out3  18 0 0 n1 l=0.1u w=5u ad=2.5p pd=6u as=2.5p ps=6u
+c1 18 out3 .1p
+
+.SUBCKT NAND in1 in2 out Vdd
+*   NODES:  INPUT(2), OUTPUT, VCC
+M1 out in2 Vdd Vdd p1 l=0.1u  w=10u ad=5p pd=11u as=5p ps=11u 
+M2 net.1 in2 0 0 n1   l=0.1u w=5u ad=2.5p pd=6u as=2.5p ps=6u
+M3 out in1 Vdd Vdd p1 l=0.1u  w=10u ad=5p pd=11u as=5p ps=11u 
+M4 out in1 net.1 0 n1 l=0.1u w=5u ad=2.5p pd=6u as=2.5p ps=6u
+.ENDS NAND
+
+*.ic v(2)=1.0 v(3)=1.0 v(4)=1.0
+*.ic v(2)=2.0 v(3)=0.0 v(4)=2.0
+*.ic v(2)=2.0 v(3)=0.0 v(4)=2.0 v(5)=0.0 v(6)=2.0 
+*.ic v(7)=0.0 v(8)=2.0 v(9)=0.0 v(10)=2.0 v(11)=0.0 v(12)=2.0
+*.ic v(13)=0.0 v(14)=2.0 v(15)=0.0 v(16)=2.0 v(17)=0.0 v(18)=2.0
+*.ic V(10)=5 v(2)=5 v(3)=5 v(4)=5 v(5)=5 v(6)=5
+
+
+.tran .1ns 0.2us
+.save V(out3) v(in3)
+
+.end
