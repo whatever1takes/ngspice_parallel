@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/w1t/code/ngspice_parallel/simple_single/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,1 @@
+/usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/ngspice_simple_single.dir/main.c.o -o ngspice_simple_single  /opt/local/lib/libngspice.dylib
